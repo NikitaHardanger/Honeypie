@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HoneyPie", "HoneyPie\HoneyPie.vcxproj", "{C15DD85C-AF90-490B-A1BD-78362C7229B1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{F14E8D52-64A1-4EC5-8A66-E9F3E3552294}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C15DD85C-AF90-490B-A1BD-78362C7229B1}.Debug|x64.ActiveCfg = Debug|x64
+		{C15DD85C-AF90-490B-A1BD-78362C7229B1}.Debug|x64.Build.0 = Debug|x64
+		{C15DD85C-AF90-490B-A1BD-78362C7229B1}.Release|x64.ActiveCfg = Release|x64
+		{C15DD85C-AF90-490B-A1BD-78362C7229B1}.Release|x64.Build.0 = Release|x64
+		{F14E8D52-64A1-4EC5-8A66-E9F3E3552294}.Debug|x64.ActiveCfg = Debug|x64
+		{F14E8D52-64A1-4EC5-8A66-E9F3E3552294}.Debug|x64.Build.0 = Debug|x64
+		{F14E8D52-64A1-4EC5-8A66-E9F3E3552294}.Release|x64.ActiveCfg = Release|x64
+		{F14E8D52-64A1-4EC5-8A66-E9F3E3552294}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6FDC8E9-FAA4-4431-9EF7-C2AD7EF7DC72}
+	EndGlobalSection
+EndGlobal
