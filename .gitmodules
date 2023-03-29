@@ -1,0 +1,3 @@
+[submodule "HoneyPie/vendor/spdlog"]
+	path = HoneyPie/vendor/spdlog
+	url = https://github.com/gabime/spdlog

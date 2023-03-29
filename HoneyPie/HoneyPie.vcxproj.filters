@@ -27,9 +27,15 @@
     <ClInclude Include="src\HoneyPie\EntryPoint.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\HoneyPie\Log.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\HoneyPie\Application.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HoneyPie\Log.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
