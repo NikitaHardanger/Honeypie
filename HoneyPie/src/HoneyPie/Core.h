@@ -10,3 +10,5 @@
 #else
 	#error Honeypie only supports Windows!
 #endif // HP_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)

@@ -1,4 +1,6 @@
 #include "Application.h"
+#include "HoneyPie/Events/ApplicationEvent.h"
+#include "HoneyPie/Log.h"
 
 namespace Honeypie {
 
@@ -15,6 +17,9 @@ namespace Honeypie {
 
 	void Application::Run()
 	{
+		WindowResizeEvent event(1600, 900);
+		
+		HP_TRACE(event);
 		while (true);
 	}
 	

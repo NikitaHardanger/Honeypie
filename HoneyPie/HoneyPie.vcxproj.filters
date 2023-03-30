@@ -4,6 +4,9 @@
     <Filter Include="HoneyPie">
       <UniqueIdentifier>{265DB656-122A-1162-3B43-FF09276F46F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HoneyPie\Events">
+      <UniqueIdentifier>{4A0287B5-B68D-F479-BF9E-776E2BA9507A}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HoneyPie\Application.h">
@@ -14,6 +17,18 @@
     </ClInclude>
     <ClInclude Include="src\HoneyPie\EntryPoint.h">
       <Filter>HoneyPie</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HoneyPie\Events\ApplicationEvent.h">
+      <Filter>HoneyPie\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HoneyPie\Events\Event.h">
+      <Filter>HoneyPie\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HoneyPie\Events\KeyEvent.h">
+      <Filter>HoneyPie\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HoneyPie\Events\MouseEvent.h">
+      <Filter>HoneyPie\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\HoneyPie\Log.h">
       <Filter>HoneyPie</Filter>
