@@ -1,3 +1,5 @@
+#include "HP_pch.h"
+
 #include "Application.h"
 #include "HoneyPie/Events/ApplicationEvent.h"
 #include "HoneyPie/Log.h"

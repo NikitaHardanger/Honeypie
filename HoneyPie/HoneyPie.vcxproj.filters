@@ -9,6 +9,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\HP_pch.h" />
     <ClInclude Include="src\HoneyPie\Application.h">
       <Filter>HoneyPie</Filter>
     </ClInclude>
@@ -36,6 +37,7 @@
     <ClInclude Include="src\Honeypie.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\HP_pch.cpp" />
     <ClCompile Include="src\HoneyPie\Application.cpp">
       <Filter>HoneyPie</Filter>
     </ClCompile>

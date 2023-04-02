@@ -20,6 +20,9 @@ project "HoneyPie"
 
 	targetdir ("bin/" .. outputdir .. "%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "%{prj.name}")
+
+	pchheader "HP_pch.h"
+	pchheader "HoneyPie/src/HP_pch.h"
 	
 
 	files

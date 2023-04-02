@@ -2,7 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
 
 namespace Honeypie {
 	class HONEYPIE_API MouseMovedEvent : public Event

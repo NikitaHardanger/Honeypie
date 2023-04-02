@@ -1,9 +1,9 @@
 #pragma once
 
+#include "HP_pch.h"
 #include "HoneyPie/Core.h"
 
-#include <string>
-#include <functional>
+
 
 namespace Honeypie {
 
