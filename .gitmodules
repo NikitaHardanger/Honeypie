@@ -1,3 +1,6 @@
 [submodule "HoneyPie/vendor/spdlog"]
 	path = HoneyPie/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "HoneyPie/vendor/GLFW"]
+	path = HoneyPie/vendor/GLFW
+	url = https://github.com/NikitaHardanger/glfw

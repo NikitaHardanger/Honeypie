@@ -4,12 +4,14 @@
 #include "HoneyPie/Events/ApplicationEvent.h"
 #include "HoneyPie/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Honeypie {
 
 	
 	Application::Application() 
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application() 
@@ -19,10 +21,11 @@ namespace Honeypie {
 
 	void Application::Run()
 	{
-		WindowResizeEvent event(1600, 900);
-		
-		HP_TRACE(event);
-		while (true);
+		while (m_Running)
+		{
+			
+			m_Window->OnUpdate();
+		}
 	}
 	
 }

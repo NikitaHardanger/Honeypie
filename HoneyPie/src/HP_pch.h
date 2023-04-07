@@ -13,6 +13,8 @@
 #include <unordered_set>
 #include <sstream>
 
+#include "HoneyPie/Log.h"
+
 #ifdef HP_PLATFORM_WINDOWS
 		#include <Windows.h>
 #endif

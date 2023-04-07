@@ -12,17 +12,22 @@ workspace "HoneyPie"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "HoneyPie/vendor/GLFW/include"
+
+include "HoneyPie/vendor/GLFW"
 
 project "HoneyPie"
 	location "HoneyPie"
 	kind "SharedLib"
 	language "C++"
 
-	targetdir ("bin/" .. outputdir .. "%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "HP_pch.h"
-	pchheader "HoneyPie/src/HP_pch.h"
+	pchsource "HoneyPie/src/HP_pch.cpp"
 	
 
 	files
@@ -34,7 +39,14 @@ project "HoneyPie"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -50,20 +62,22 @@ project "HoneyPie"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/")
-
+			("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
 		defines "HP_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HP_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HP_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 project "Sandbox"
@@ -71,8 +85,8 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 
-	targetdir ("bin/" .. outputdir .. "%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 	
 
 	files
@@ -105,12 +119,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HP_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HP_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HP_DIST"
+		buildoptions "/MD"
 		symbols "On"
