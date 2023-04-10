@@ -6,7 +6,8 @@
 
 
 namespace Honeypie {
-
+	
+	// defines the types of events that can occur
 	enum class EventType
 	{
 		None = 0,
@@ -16,6 +17,7 @@ namespace Honeypie {
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
+	// defines the categories of events that can occur
 	enum EventCategory
 	{
 		None = 0,
@@ -50,6 +52,7 @@ namespace Honeypie {
 		bool m_Handled = false;
 	};
 
+	// is a helper class for dispatching events to the appropriate functions.
 	class EventDispatcher
 	{
 		template <typename T>

@@ -45,13 +45,20 @@ namespace Honeypie {
 			s_GLFWInitialized = true;
 		}
 
+		// The Create method creates a new instance of the WindowsWindow class with the window properties passed in.
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
-		// Set GLFW Callbacks
 
+		// Set GLFW Callbacks
+		// glfwSetWindowSizeCallback - Set window size and send changes to console
+		// glfwSetWindowCloseCallback - Closing the window and passing the report to the console
+		// glfwSetKeyCallback - Sending changes to the console about the keys(PRESS/RELEASE/REPEAT)
+		// glfwSetMouseButtonCallback - Sending changes to the console about the mouse keys
+		// glfwSetScrollCallback - Sending changes to the console about Scroll on Window
+		// glfwSetCursorPosCallback - Sending changes to the console about Cursor Position on Window
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 		{
 			auto& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
@@ -135,12 +142,13 @@ namespace Honeypie {
 	}
 
 
-
+	// The Shutdown method destroys the created GLFW window.
 	void WindowsWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_Window);
 	}
 
+	// The OnUpdate method starts the GLFW event loop and updates the contents of the window.
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
@@ -148,6 +156,8 @@ namespace Honeypie {
 	}
 
 
+	// The SetVSync and IsVSync methods set and return 
+	// the vertical synchronization (VSync) state for the GLFW window.
 	void WindowsWindow::SetVSync(bool enabled)
 	{
 		if (enabled)
