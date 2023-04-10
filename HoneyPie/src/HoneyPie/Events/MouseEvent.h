@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Event.h"
+#include <sstream>
 
 
 namespace Honeypie {
+
 	class HONEYPIE_API MouseMovedEvent : public Event
 	{
 	public:
@@ -12,7 +14,7 @@ namespace Honeypie {
 		inline float GetX() const { 
 			return m_MouseX;
 		}
-		inline float GetX() const {
+		inline float GetY() const {
 			return m_MouseY;
 		}
 
@@ -44,7 +46,7 @@ namespace Honeypie {
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseScrolledEvent: " << GetXOffset << ", " << GetYOffset;
+			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
 			return ss.str();
 		}
 
