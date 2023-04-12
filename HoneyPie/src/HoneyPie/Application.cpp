@@ -22,6 +22,15 @@ namespace Honeypie {
 
 	}
 
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+	void Application::PushOverlay(Layer* overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
+	}
+
 	// This function is the event callback for the Window object created in the constructor. 
 	// It dispatches events to the appropriate member function using EventDispatcher.
 	void Application::OnEvent(Event& e)
@@ -30,7 +39,15 @@ namespace Honeypie {
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(OnWindowCLose));
 
 		// Outputs a trace log message containing the event's details.
-		HP_CORE_TRACE("{0}", e);
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+		{
+			(*--it)->OnEvent(e);
+			if (e.Handled)
+			{
+				break;
+			}
+		}
+
 	}
 
 	// This function runs the main loop for the application.
@@ -41,6 +58,9 @@ namespace Honeypie {
 			// Clears the color buffer and updates the window.
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
 			m_Window->OnUpdate();
 		}
 	}

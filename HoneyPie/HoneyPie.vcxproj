@@ -151,6 +151,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\HoneyPie\Layer.h" />
+    <ClInclude Include="src\HoneyPie\LayerStack.h" />
     <ClInclude Include="src\HP_pch.h" />
     <ClInclude Include="src\HoneyPie\Application.h" />
     <ClInclude Include="src\HoneyPie\Core.h" />
@@ -165,6 +167,8 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\HoneyPie\Layer.cpp" />
+    <ClCompile Include="src\HoneyPie\LayerStack.cpp" />
     <ClCompile Include="src\HP_pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
