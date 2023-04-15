@@ -3,7 +3,7 @@
 #include "Application.h"
 #include "HoneyPie/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Honeypie {
 
@@ -15,6 +15,9 @@ namespace Honeypie {
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
+
+		unsigned int id;
+		glGenVertexArrays(1, &id);
 	}
 
 	Application::~Application() 

@@ -15,8 +15,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "HoneyPie/vendor/GLFW/include"
+IncludeDir["Glad"] = "HoneyPie/vendor/Glad/include"
 
 include "HoneyPie/vendor/GLFW"
+include "HoneyPie/vendor/GLAD"
 
 project "HoneyPie"
 	location "HoneyPie"
@@ -41,11 +43,13 @@ project "HoneyPie"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -57,7 +61,8 @@ project "HoneyPie"
 		defines
 		{
 			"HP_PLATFORM_WINDOWS",
-			"HP_BUILD_DLL"
+			"HP_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

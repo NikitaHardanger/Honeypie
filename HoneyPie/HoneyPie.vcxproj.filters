@@ -37,6 +37,12 @@
     <ClInclude Include="src\HoneyPie\Events\MouseEvent.h">
       <Filter>HoneyPie\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\HoneyPie\Layer.h">
+      <Filter>HoneyPie</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HoneyPie\LayerStack.h">
+      <Filter>HoneyPie</Filter>
+    </ClInclude>
     <ClInclude Include="src\HoneyPie\Log.h">
       <Filter>HoneyPie</Filter>
     </ClInclude>
@@ -47,16 +53,16 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\HoneyPie\Layer.h">
-      <Filter>HoneyPie</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HoneyPie\LayerStack.h">
-      <Filter>HoneyPie</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\HP_pch.cpp" />
     <ClCompile Include="src\HoneyPie\Application.cpp">
+      <Filter>HoneyPie</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HoneyPie\Layer.cpp">
+      <Filter>HoneyPie</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HoneyPie\LayerStack.cpp">
       <Filter>HoneyPie</Filter>
     </ClCompile>
     <ClCompile Include="src\HoneyPie\Log.cpp">
@@ -64,12 +70,6 @@
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HoneyPie\Layer.cpp">
-      <Filter>HoneyPie</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HoneyPie\LayerStack.cpp">
-      <Filter>HoneyPie</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
