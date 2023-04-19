@@ -16,7 +16,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "HoneyPie/vendor/GLFW/include"
 IncludeDir["Glad"] = "HoneyPie/vendor/Glad/include"
-IncludeDir["imgui"] = "HoneyPie/vendor/Glad/include"
+IncludeDir["imgui"] = "HoneyPie/vendor/imgui"
 
 include "HoneyPie/vendor/GLFW"
 include "HoneyPie/vendor/GLAD"

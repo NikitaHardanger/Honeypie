@@ -9,10 +9,15 @@ namespace Honeypie {
 
 	// This macro is used to bind member functions of the Application class to event callbacks.
 #define BIND_EVENT_FUNC(x) std::bind(&Application::x, this, std::placeholders::_1)
+
+	Application* Application::s_Instance = nullptr;
 	
 	// Constructor for the Application class, which creates a Window object and sets its event callback to OnEvent().
 	Application::Application() 
 	{
+		HP_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
 	}
@@ -25,10 +30,12 @@ namespace Honeypie {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
-	void Application::PushOverlay(Layer* overlay)
+	void Application::PushOverlay(Layer* layer)
 	{
-		m_LayerStack.PushOverlay(overlay);
+		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	// This function is the event callback for the Window object created in the constructor. 
@@ -56,7 +63,7 @@ namespace Honeypie {
 		while (m_Running)
 		{
 			// Clears the color buffer and updates the window.
-			glClearColor(1, 0, 1, 1);
+			glClearColor(0, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
