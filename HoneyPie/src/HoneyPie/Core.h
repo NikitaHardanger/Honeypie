@@ -11,6 +11,7 @@
 	#error Honeypie only supports Windows!
 #endif // HP_PLATFORM_WINDOWS
 
+
 #ifdef HP_ENABLE_ASSERTS
 	#define HP_ASSERT(x, ...) {
 		if (!(x)) {
@@ -29,3 +30,5 @@
 
 
 #define BIT(x) (1 << x)
+
+#define HP_BIND_EVENT_FUNC(func) std::bind(&func, this, std::placeholders::_1)
